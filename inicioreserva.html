@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Aranwa Hotel</title>
+    <link rel="stylesheet" href="styleinicioreserva.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar flex1">
+                <div class="sticky_logo logo" onclick="redireccionAranwa()">
+                    <img src="imagenes/logoAranwa.png" alt="Logo de Aranwa Hotels">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="ServiciosDetalles.html">Servicios</a></li>
+                    <li><a href="Nosotros.html">Nosotros</a></li>
+                    <li><a href="inicioreserva.html">Reservas</a></li>
+                    <li><a href="Hoteles.html">Hoteles</a></li>
+                    <li><a href="Login.html">Login/Registrarme</a></li>
+                    <li><a href="#contact">Contactos</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <div class="head_contact">
+                    <i class="fas fa-phone-volume"></i>
+                    <span>511 207-0440</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobilemmenu);
+
+        function mobilemmenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        window.addEventListener("scroll", function () {
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0)
+        })
+    </script>
+
+    <div class="progress-bar">
+        <div class="step active">
+            <span>1</span>
+            <p>Adultos y Niños</p>
+        </div>
+        <div class="line"></div>
+        <div class="step">
+            <span>2</span>
+            <a href="DiasdeEstancia.html">Días de estancia</a>
+        </div>
+        <div class="line"></div>
+        <div class="step">
+            <span>3</span>
+            <a href="alojamientos.html">Alojamientos</a>
+        </div>
+        <div class="line"></div>
+        <div class="step">
+            <span>4</span>
+            <a href="total.html">Total</a>
+        </div>
+    </div>
+    <main class="content">
+        <h1>Huéspedes y habitaciones</h1>
+        <form>
+            <div class="form-group">
+                <label for="adults">Adultos</label>
+                <select id="adults">
+                    <option value="1">1 Adulto</option>
+                    <option value="2" selected>2 Adultos</option>
+                    <option value="3">3 Adultos</option>
+                </select>
+                <label for="children">Niños</label>
+                <select id="children">
+                    <option value="0" selected>0 Niños</option>
+                    <option value="1">1 Niño</option>
+                    <option value="2">2 Niños</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <a href="#" class="add-room">+ Añadir una habitación</a>
+            </div>
+            <button type="submit">Actualizar Huéspedes y Habitaciones</button>
+        </form>
+    </main>
+</body>
+
+</html>
+<footer>
+    <div class="footer-content">
+        <p>Aranwa Hotel, Peru - <a href="#">Información sobre el establecimiento</a></p>
+        <div class="footer-links">
+            <a href="#">Modificar / cancelar reserva</a>
+            <a href="#">Comenzar de nuevo</a>
+        </div>
+    </div>
+    <div class="footer-links" style="text-align: center; padding: 20px 0;">
+        <a href="SiteMap.html" target="_blank" style="color: #ffffff; text-decoration: underline;">
+            Ver Sitemap del sitio
+              </a>
+    </div>
+</footer>
+</body>
+
+</html>

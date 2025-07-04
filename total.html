@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva de Habitaciones - Aranwa</title>
+  <link rel="stylesheet" href="total.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="navbar flex1">
+        <div class="sticky_logo logo" onclick="redireccionAranwa()">
+          <img src="imagenes/logoAranwa.png" alt="Logo de Aranwa Hotels">
+        </div>
+        <ul class="nav-menu">
+          <li><a href="ServiciosDetalles.html">Servicios</a></li>
+          <li><a href="Nosotros.html">Nosotros</a></li>
+          <li><a href="inicioreserva.html">Reservas</a></li>
+          <li><a href="Hoteles.html">Hoteles</a></li>
+          <li><a href="Login.html">Login/Registrarme</a></li>
+          <li><a href="#contact">Contactos</a></li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <div class="head_contact">
+          <i class="fas fa-phone-volume"></i>
+          <span>511 207-0440</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", mobilemmenu);
+
+    function mobilemmenu() {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    }
+
+    window.addEventListener("scroll", function () {
+      var header = document.querySelector("header");
+      header.classList.toggle("sticky", window.scrollY > 0)
+    })
+  </script>
+
+  <main>
+    <div class="progress-bar">
+      <div class="step active">
+        <span>1</span>
+        <p>Adultos y Niños</p>
+      </div>
+      <div class="line"></div>
+      <div class="step active">
+        <span>2</span>
+        <p>Días de Estancia</p>
+      </div>
+      <div class="line"></div>
+      <div class="step">
+        <span>3</span>
+        <p>Alojamientos</p>
+      </div>
+      <div class="line"></div>
+      <div class="step">
+        <span>4</span>
+        <p>Total</p>
+      </div>
+    </div>
+
+    <main class="reservation">
+      <section class="reservation-details">
+        <div class="left-column">
+          <h2>Su reserva</h2>
+          <div class="room-info">
+            <h3>Habitación Deluxe, 1 cama King size - 1 habitación</h3>
+            <p><strong>1 noche</strong></p>
+            <p><strong>Adultos:</strong> 1</p>
+            <p><strong>Fecha:</strong> Ma, Dic 24, 2024</p>
+          </div>
+          <div class="price-info">
+            <p><strong>Subtotal</strong>: USD 218.40</p>
+            <p>**Se adicionará 18% del IGV a los ciudadanos Peruanos o Residentes al momento de realizar el cobro de la
+              reserva.</p>
+            <p><strong>10% Impuesto de Servicio</strong>: USD 21.84</p>
+            <p><strong>Total (No incluye 10% Impuesto de Servicio e IGV)</strong>: USD 279.55</p>
+          </div>
+          <div class="check-info">
+            <p><strong>Horario de Check In:</strong> 15:00 hrs. <br> <strong>Horario de Check Out:</strong> 12:00 hrs.
+            </p>
+          </div>
+        </div>
+
+        <div class="right-column">
+          <h2>Información del huésped</h2>
+          <form class="guest-form">
+            <label for="first-name">Nombre *</label>
+            <input type="text" id="first-name" name="first-name" required>
+
+            <label for="last-name">Apellidos *</label>
+            <input type="text" id="last-name" name="last-name" required>
+
+            <label for="email">Dirección de correo electrónico *</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Número de teléfono *</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="dni">DNI o Pasaporte *</label>
+            <input type="text" id="dni" name="dni" required>
+
+            <label for="city">Ciudad *</label>
+            <select id="city" name="city" required>
+              <option value="peru">Perú</option>
+            </select>
+
+            <div class="payment-info">
+              <h2>Modo de pago</h2>
+              <label for="card-holder">Titular</label>
+              <input type="text" id="card-holder" name="card-holder" required>
+
+              <label for="card-number">Tarjeta núm.</label>
+              <input type="text" id="card-number" name="card-number" required>
+
+              <label for="expiry">MM/AA</label>
+              <input type="text" id="expiry" name="expiry" required>
+
+              <div class="checkbox">
+                <input type="checkbox" id="same-address" name="same-address">
+                <label for="same-address">Utilizar la misma dirección como información de contacto.</label>
+              </div>
+
+              <div class="checkbox">
+                <input type="checkbox" id="notifications" name="notifications">
+                <label for="notifications">Notificarme sobre ofertas especiales.</label>
+              </div>
+
+              <div class="checkbox">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">He leído y acepto los <a href="#">Términos y condiciones</a> y la <a
+                    href="#">Política de privacidad</a></label>
+              </div>
+
+              <button type="submit" class="reserve-now">RESERVE AHORA</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+
+    <footer>
+      <div class="container top">
+        <div class="subscribe" id="contact">
+          <h2>Subscribete</h2>
+          <p>Recibe las últimas noticias y promociones directamente en tu correo</p>
+          <div class="input flex">
+            <input type="email" placeholder="Ingresa tu correo ">
+            <button class="flex1" onclick="redireccion()">
+              <span>Registrarme</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="content grid  top">
+          <div class="box">
+            <div class="logo">
+              <img src="imagenes/logoAranwa.png" alt="Logo de Aranwa" width="180" height="50">
+            </div>
+            <div class="social flex">
+              <a href="https://www.facebook.com/AranwaHotels/?locale=es_LA" target="_blank" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com/aranwahotels/?hl=es-la" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.youtube.com/@AranwaHotels" target="_blank" title="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="https://www.tripadvisor.com/Aranwa" target="_blank" title="TripAdvisor">
+                <i class="fab fa-tripadvisor"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="box">
+            <h2>ARANWA</h2>
+            <ul>
+              <li><i class="fas fa-angle-double-right"></i><a href="Nosotros.html">Nosotros</a></li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <h2>DESTINOS</h2>
+            <ul>
+              <li><i class="fas fa-angle-double-right"></i><a href="CUSCO.html">Cusco</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="SACRED VALLEY.html">Valle Sagrado</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="COLCA.html">Colca</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="PARACAS.html">Paracas</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="VICHAYITO.html">Vichayito</a></li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <h2>SERVICIOS</h2>
+            <ul>
+              <li><i class="fas fa-angle-double-right"></i><a href="Eventos.html">Eventos</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="Spa.html">Spa</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="Bodas.html">Bodas</a></li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <h2>Información de Contacto</h2>
+            <div class="icon flex">
+              <div class="i">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="text">
+                <h3>Oficionas Coorporativas</h3>
+                <p>​Av. Encalada 1420 of. 401, Santiago de Surco, Lima - Perú.</p>
+              </div>
+            </div>
+            <div class="icon flex">
+              <div class="i">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="text">
+                <h3>Central de Reservas</h3>
+                <p>511 207-0440</p>
+              </div>
+            </div>
+            <div class="icon flex">
+              <div class="i">
+                <i class="far fa-envelope"></i>
+              </div>
+              <div class="text">
+                <h3>Correo de Reserva:</h3>
+                <p>reservas@aranwahotels.com</p>
+                <h3>Correo de Contacto:</h3>
+                <p>consultas@aranwahotels.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-links" style="text-align: center; padding: 20px 0;">
+        <a href="SiteMap.html" target="_blank" style="color: #ffffff; text-decoration: underline;">
+          Ver Sitemap del sitio
+            </a>
+      </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SESION INICIADA</title>
+    <link rel="stylesheet" href="styleInicioSesion.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar flex1">
+                <div class="sticky_logo logo" onclick="redireccionAranwa()">
+                    <img src="imagenes/logoAranwa.png" alt="Logo de Aranwa Hotels">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="ServiciosDetalles.html">Servicios</a></li>
+                    <li><a href="Nosotros.html">Nosotros</a></li>
+                    <li><a href="inicioreserva.html">Reservas</a></li>
+                    <li><a href="Hoteles.html">Hoteles</a></li>
+                    <li><a href="Login.html">Login/Registrarme</a></li>
+                    <li><a href="#contact">Contactos</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <div class="head_contact">
+                    <i class="fas fa-phone-volume"></i>
+                    <span>511 207-0440</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobilemmenu);
+
+        function mobilemmenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        window.addEventListener("scroll", function () {
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0)
+        })
+    </script>
+
+    <section class="bienvenida">
+        <div class="container">
+            <h1>¡Bienvenidos a Aranwa Hotels!</h1>
+            <p>
+                Nos complace ofrecerte una experiencia inolvidable con nuestros servicios exclusivos,
+                beneficios únicos y atención personalizada para que tu estancia sea perfecta.
+            </p>
+        </div>
+    </section>
+
+    <section class="beneficios">
+        <div class="container">
+            <h2>Mis Beneficios</h2>
+            <div class="beneficios-grid">
+                <div class="beneficio-item">
+                    <img src="imagenes/Puntos.png" alt="Gana puntos">
+                    <p>Gana puntos por cada 1 USD</p>
+                </div>
+                <div class="beneficio-item">
+                    <img src="imagenes/Noches canjeadas.png" alt="Noches canjeadas">
+                    <p>Noches canjeadas para familia y amigos</p>
+                </div>
+                <div class="beneficio-item">
+                    <img src="imagenes/Descuentos.png" alt="Descuentos exclusivos">
+                    <p>Descuentos exclusivos sobre puntos</p>
+                </div>
+                <div class="beneficio-item">
+                    <img src="imagenes/Promociones.png" alt="Promociones exclusivas">
+                    <p>Promociones con tarifas exclusivas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="search-bar">
+        <form id="search-form">
+            <div class="form-group">
+                <label for="destino"><i class="fas fa-map-marker-alt"></i></label>
+                <select id="destino" name="destino" required>
+                    <option value="" disabled selected>Elige un destino, hotel</option>
+                    <option value="Lima">Lima</option>
+                    <option value="Cusco">Cusco</option>
+                    <option value="Arequipa">Arequipa</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="entrada"><i class="fas fa-calendar-alt"></i></label>
+                <input type="date" id="entrada" name="entrada" required>
+            </div>
+            <div class="form-group">
+                <label for="salida"><i class="fas fa-calendar-alt"></i></label>
+                <input type="date" id="salida" name="salida" required>
+            </div>
+            <div class="form-group">
+                <label for="personas"><i class="fas fa-user"></i></label>
+                <input type="number" id="personas" name="personas" placeholder="Número de personas" min="1" required>
+            </div>
+            <button type="submit" class="btn-buscar">Buscar</button>
+        </form>
+    </section>
+
+    <section class="comentarios">
+        <div class="container">
+            <h2>Comentarios</h2>
+            <form id="comentarios-form">
+                <textarea id="comentario" placeholder="Escribe tu comentario positivo o experiencia"
+                    required></textarea>
+                <button type="submit">Enviar comentario</button>
+            </form>
+            <div id="comentarios-lista">
+            </div>
+        </div>
+    </section>
+    <div class="footer-links" style="text-align: center; padding: 20px 0;">
+        <a href="SiteMap.html" target="_blank" style="color: #ffffff; text-decoration: underline;">
+            Ver Sitemap del sitio
+              </a>
+    </div>
+</body>
+
+</html>
